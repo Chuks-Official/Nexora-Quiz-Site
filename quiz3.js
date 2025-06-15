@@ -235,7 +235,18 @@ const questions = [
     if (userAnswer === correctAnswer) {
       score++;
     }
-  
+  document.addEventListener("contextmenu", e => e.preventDefault());
+       document.onkeydown = function(e) {
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'c' || e.key === 'C' ))
+       {
+        return false;
+
+
+       }
+       if (e.key === 'f12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i'))){
+        return false;
+       }
+      }
     currentQuestion++;
   
     if (currentQuestion < questions.length) {
